@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Exercise</title>
+	<style type="text/css">
+		h1{
+			font-size: 20px;
+			font-family: "Microsoft YaHei";
+		}
+		ol{
+			font-family: "Microsoft YaHei";
+			font-size: 14px;
+			font-height:14px;
+		}
+		li{
+			margin:5px;
+		}
+	</style>
+</head>
+<body>
+	<h1>慕课网JS动画demo效果演示</h1>
+	<ol>
+		<li><a href="marquee.html">marquee实现各种滚动</a></li>
+	    <li><a href="showTime.html">2017高考倒计时</a></li>
+	    <li><a href="taobao.html">淘宝网鼠标移入移除小动画</a></li>
+	    <li><a href="文字无缝滚动（源代码）.html">文字无缝滚动动画</a></li>
+	    <li><a href="间歇性滚动（源代码）.html">文字间歇性滚动动画</a></li>
+	    <li><a href="HTMLPage2-1.htm">仿京东商城分类导航栏</a></li>
+	</ol>
+</body>
+</html>

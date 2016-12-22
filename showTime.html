@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Showtime</title>
+	<script>
+		window.onload=function(){
+			showTime();
+			showLeftTime();
+			showLeftTime1();
+		}
+		//个位数显示两位
+		function checkTime(i){
+            if(i<10){
+            	i="0"+i;
+            }
+            return i;
+		}
+		//显示当前时间
+		function showTime(){
+			var myDate=new Date();
+			var year=myDate.getFullYear();
+			var month=myDate.getMonth()+1;
+			var date=myDate.getDate();
+			var d=myDate.getDay();
+			var h=myDate.getHours();
+			var m=myDate.getMinutes();
+            var s=myDate.getSeconds();
+            m=checkTime(m);
+            s=checkTime(s);
+            var weekday=new Array(7)
+            weekday[0]="星期日";
+            weekday[1]="星期一";
+            weekday[2]="星期二";
+            weekday[3]="星期三";
+            weekday[4]="星期四";
+            weekday[5]="星期五";
+            weekday[6]="星期六";
+            document.getElementById("show").innerHTML='当前时间：'+""+year+'年'+month+'月'+date+'日'+ weekday[d]+h+":"+m+":"+s;
+            setTimeout(showTime,500);
+		}
+		//显示剩余天数
+		function showLeftTime(){
+			var curtime=new Date();
+			var endtime=new Date("2017,6,6");
+			var lefttime=Math.ceil((endtime.getTime()-curtime.getTime())/(24*60*60*1000));
+			document.getElementById('left').innerHTML='距离高考还剩：'+lefttime+'天';
+		}
+		//显示剩余时分秒
+		function showLeftTime1(){
+			var curtime=new Date();
+			var endtime=new Date("2017,1,1,12:20:12");
+			var lefttime=parseInt((endtime.getTime()-curtime.getTime())/1000);
+			var d=parseInt(lefttime/(24*60*60));
+			var h=parseInt(lefttime/(60*60)%24);
+			var m=parseInt(lefttime/60%60);
+			var s=lefttime%60;
+			document.getElementById('left1').innerHTML='距离团购结束还剩：'+d+'天'+m+'分'+s+'秒';
+			if(lefttime<=0){
+				document.getElementById('left1').innerHTML='团购结束';
+			}
+		    setTimeout(showLeftTime1,500);
+		}
+	</script>
+</head>
+<body>
+<div class="contents">
+	<div id="show">显示时间的位置</div>
+	<div id="left">显示高考倒计时的位置</div>
+	<div id="left1">显示倒计时时分秒</div>
+</div>
+	
+</body>
+</html>
